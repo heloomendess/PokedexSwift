@@ -9,10 +9,20 @@ import SwiftUI
 
 struct StatisticsView: View {
     var body: some View {
-        ZStack {
+        
+        VStack(spacing: 20) {
+            
             Text("Pokedex")
-            Color.red
-                .edgesIgnoringSafeArea(.all)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding(.top, 20)
+            
+            ZStack {
+                Text("Pokedex")
+                Color.red
+                    .edgesIgnoringSafeArea(.all)
+            }
         }
     }
 }
