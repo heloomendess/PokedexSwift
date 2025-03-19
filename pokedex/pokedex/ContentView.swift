@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  pokedex
+//  PokedexSwift
 //
-//  Created by Aluno Mack on 19/03/25.
+//  Created by HELOISA MENDES DO NASCIMENTO BARBOSA on 19/03/25.
 //
 
 import SwiftUI
@@ -10,23 +10,20 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            PokedexView()
-                .tabItem {
-                    Label("Pokedex", systemImage : "magazine")
-                }
-            
-            StatisticsView()
-                .tabItem {
-                    Label("Estatisticas", systemImage : "chart.xyaxis.line")
-                    }
-                
-           }.accentColor(.white)
-        }
+                    PokedexView()
+                        .tabItem {
+                            Label("Pokedex", systemImage : "magazine")
+                        }
+                    
+                    StatisticsView()
+                        .tabItem {
+                            Label("Estatisticas", systemImage : "chart.xyaxis.line")
+                            }
+                        
+                   }.accentColor(.white)
     }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
-    }
+}
 
+#Preview {
+    ContentView()
+}
