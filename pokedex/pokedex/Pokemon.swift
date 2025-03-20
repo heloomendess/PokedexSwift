@@ -20,6 +20,10 @@ enum ElementType: String {
     case fighting
     case ghost
 }
+let todosOsTipos: [ElementType] = [
+    .grass, .poison, .fire, .flying, .water, .bug, .normal, .electric,
+    .ground, .fairy, .psychic, .rock, .ice, .dragon, .dark, .steel,
+    .fighting, .ghost]
 
 struct Pokemon {
     var id: Int
@@ -180,3 +184,21 @@ let pokemons: [Pokemon] = [
     Pokemon(id: 150, name: "mewtwo", types: [.psychic]),
     Pokemon(id: 151, name: "mew", types: [.psychic])
 ]
+func contarTipos(pokemons: [Pokemon]) -> [ElementType: Int] {
+    var contador: [ElementType: Int] = [:]
+    
+    // Inicializa o contador com zero para todos os tipos
+    for tipo in todosOsTipos {
+        contador[tipo] = 0
+    }
+    
+    // Conta os tipos dos Pokémons
+    for pokemon in pokemons {
+        for type in pokemon.types {
+            contador[type] = (contador[type] ?? 0) + 1
+        }
+    }
+    
+    return contador
+}
+
